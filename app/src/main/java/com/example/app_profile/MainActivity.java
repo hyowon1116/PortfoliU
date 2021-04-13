@@ -41,24 +41,18 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        BottomNavigationView navView = findViewById(R.id.bottom_view);
+        //BottomNavigationView navView = findViewById(R.id.bottom_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
-                .build();
+        //appBarConfiguration = new AppBarConfiguration.Builder(
+                //R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
+                //.build();
         //NavHostFragment navHostFragment = (NavHostFragment)getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_bottom);
         //NavController navController_b = navHostFragment.getNavController();
         //NavigationUI.setupActionBarWithNavController(this, navController_b, appBarConfiguration);
         //NavigationUI.setupWithNavController(navView, navController_b);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
 
     @Override
     public boolean onSupportNavigateUp() {
