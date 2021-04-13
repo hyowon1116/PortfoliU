@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="56dp"
     tools:context=".ui.notifications.NotificationsFragment">
 
     <TextView
@@ -32,7 +33,7 @@
                 android:text=""
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 />
 
             <TextView
@@ -85,25 +86,25 @@
                 android:textStyle="bold"
                 />
 
-            <TextView
-                android:text="토"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                />
+<!--            <TextView-->
+<!--                android:text="토"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:textStyle="bold"-->
+<!--                />-->
 
-            <TextView
-                android:text="일"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textColor="#ffffff"
-                android:textStyle="bold"
-                />
+<!--            <TextView-->
+<!--                android:text="일"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textColor="#ffffff"-->
+<!--                android:textStyle="bold"-->
+<!--                />-->
 
         </TableRow>
 
@@ -117,7 +118,7 @@
                 android:text="8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -180,27 +181,27 @@
                 android:id="@+id/friday0"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday0"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday0"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday0"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday0"-->
+<!--                />-->
 
         </TableRow>
 
@@ -214,7 +215,7 @@
                 android:text="9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -277,27 +278,27 @@
                 android:id="@+id/friday1"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday1"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday1"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday1"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday1"-->
+<!--                />-->
 
         </TableRow>
 
@@ -311,7 +312,7 @@
                 android:text="10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -374,27 +375,27 @@
                 android:id="@+id/friday2"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday2"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday2"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday2"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday2"-->
+<!--                />-->
 
         </TableRow>
 
@@ -408,7 +409,7 @@
                 android:text="11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -471,27 +472,27 @@
                 android:id="@+id/friday3"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday3"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday3"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday3"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday3"-->
+<!--                />-->
 
         </TableRow>
 
@@ -505,7 +506,7 @@
                 android:text="12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -568,27 +569,27 @@
                 android:id="@+id/friday4"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday4"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday4"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday4"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday4"-->
+<!--                />-->
 
         </TableRow>
 
@@ -602,7 +603,7 @@
                 android:text="13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -665,27 +666,27 @@
                 android:id="@+id/friday5"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday5"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday5"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday5"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday5"-->
+<!--                />-->
 
         </TableRow>
 
@@ -699,7 +700,7 @@
                 android:text="14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -762,27 +763,27 @@
                 android:id="@+id/friday6"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday6"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday6"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday6"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday6"-->
+<!--                />-->
 
         </TableRow>
 
@@ -796,7 +797,7 @@
                 android:text="15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -859,27 +860,27 @@
                 android:id="@+id/friday7"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday7"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday7"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday7"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday7"-->
+<!--                />-->
 
         </TableRow>
 
@@ -893,7 +894,7 @@
                 android:text="16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -956,27 +957,27 @@
                 android:id="@+id/friday8"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday8"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday8"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday8"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday8"-->
+<!--                />-->
 
         </TableRow>
 
@@ -990,7 +991,7 @@
                 android:text="17"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -1053,27 +1054,27 @@
                 android:id="@+id/friday9"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday9"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday9"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday9"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday9"-->
+<!--                />-->
 
         </TableRow>
 
@@ -1087,7 +1088,7 @@
                 android:text="18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -1150,27 +1151,26 @@
                 android:id="@+id/friday10"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday10"
-                />
+<!--            <TextView-->
+<!--                android:id="@+id/saturday10"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:gravity="center"-->
+<!--                android:text=""-->
+<!--                android:textStyle="bold" />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday10"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday10"-->
+<!--                />-->
 
         </TableRow>
 
@@ -1184,7 +1184,7 @@
                 android:text="19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -1247,27 +1247,27 @@
                 android:id="@+id/friday11"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday11"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday11"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday11"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday11"-->
+<!--                />-->
 
         </TableRow>
 
@@ -1281,7 +1281,7 @@
                 android:text="20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_weight="0.7"
                 android:background="@color/purple_500"
                 android:textColor="#ffffff"
                 android:textStyle="bold"
@@ -1344,27 +1344,27 @@
                 android:id="@+id/friday12"
                 />
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/saturday12"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/saturday12"-->
+<!--                />-->
 
-            <TextView
-                android:text=""
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="3"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/cell_shape"
-                android:id="@+id/sunday12"
-                />
+<!--            <TextView-->
+<!--                android:text=""-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="3"-->
+<!--                android:gravity="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:background="@drawable/cell_shape"-->
+<!--                android:id="@+id/sunday12"-->
+<!--                />-->
 
         </TableRow>
 
