@@ -1,5 +1,6 @@
 package com.example.app_profile.ui.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_profile.R;
+import com.example.app_profile.Recycler.RecyclerAdapter;
+import com.example.app_profile.Room.AppDatabase;
+import com.example.app_profile.Room.User;
+import com.example.app_profile.SaveMemoActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
@@ -35,6 +46,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,  Bundle savedInstanceState) {
 
         ViewGroup rootview = (ViewGroup)inflater.inflate(R.layout.fragment_home,container,false);
+
 
         CertificateFragment = new certificateFragment();
         ForeignFragment = new foreignFragment();
@@ -89,5 +101,9 @@ public class HomeFragment extends Fragment {
         });
 
         return rootview;
+
+
     }
+
+
 }
