@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".SaveMemoActivity"/>
         <activity android:name=".DetailActivity"/>
+        <activity android:name=".SaveMemoActivity_foreign"/>
+        <activity android:name=".DetailActivity_foreign"/>
 
     </application>
 
