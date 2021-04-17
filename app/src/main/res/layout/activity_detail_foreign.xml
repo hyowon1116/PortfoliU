@@ -41,18 +41,56 @@
     <EditText
         android:id="@+id/detailDes_foreign"
         android:layout_width="397dp"
-        android:layout_height="403dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailImage_foreign"
+        app:layout_constraintVertical_bias="0.044" />
+
+    <EditText
+        android:id="@+id/detailDes2_foreign"
+        android:layout_width="397dp"
+        android:layout_height="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="5dp"
         android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailImage_foreign" />
+        app:layout_constraintTop_toBottomOf="@+id/detailDes_foreign"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/detailDes3_foreign"
+        android:layout_width="397dp"
+        android:layout_height="203dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="5dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailDes2_foreign"
+        app:layout_constraintVertical_bias="0.02" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/exit_foreign"
@@ -70,7 +108,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/update_foreign"
-        app:layout_constraintTop_toBottomOf="@+id/detailDes_foreign" />
+        app:layout_constraintTop_toBottomOf="@+id/detailDes_foreign"
+        app:layout_constraintVertical_bias="0.908" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/update_foreign"
@@ -88,6 +127,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/exit_foreign"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailDes_foreign" />
+        app:layout_constraintTop_toBottomOf="@+id/detailDes_foreign"
+        app:layout_constraintVertical_bias="0.908" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

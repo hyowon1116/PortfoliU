@@ -8,13 +8,13 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.app_profile.Room.AppDatabase;
-import com.example.app_profile.Room.AppDatabase_foreign;
-import com.example.app_profile.Room.User;
-import com.example.app_profile.Room.User_foreign;
+import com.example.app_profile.Room.AppDatabase_outschool;
+import com.example.app_profile.Room.AppDatabase_school;
+import com.example.app_profile.Room.User_outschool;
+import com.example.app_profile.Room.User_school;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class DetailActivity_foreign extends AppCompatActivity {
+public class DetailActivity_outschool extends AppCompatActivity {
     private final int REQUEST_CODE = 200;
 
     private EditText detailTitle;
@@ -22,7 +22,7 @@ public class DetailActivity_foreign extends AppCompatActivity {
     private EditText detailDes;
     private EditText detailDes2;
     private EditText detailDes3;
-    private AppDatabase_foreign db;
+    private AppDatabase_outschool db;
 
     private FloatingActionButton exit;
     private FloatingActionButton update;
@@ -37,7 +37,7 @@ public class DetailActivity_foreign extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail_foreign);
+        setContentView(R.layout.activity_detail_outschool);
 
         initialized();
 
@@ -61,16 +61,16 @@ public class DetailActivity_foreign extends AppCompatActivity {
     }
 
     private void initialized() {
-        update = findViewById(R.id.update_foreign);
-        exit = findViewById(R.id.exit_foreign);
-        detailTitle = findViewById(R.id.detailTitle_foreign);
-        detailImage = findViewById(R.id.detailImage_foreign);
-        detailDes = findViewById(R.id.detailDes_foreign);
-        detailDes2 = findViewById(R.id.detailDes2_foreign);
-        detailDes3 = findViewById(R.id.detailDes3_foreign);
-        db = AppDatabase_foreign.getInstance(this);
+        update = findViewById(R.id.update_outschool);
+        exit = findViewById(R.id.exit_outschool);
+        detailTitle = findViewById(R.id.detailTitle_outschool);
+        detailImage = findViewById(R.id.detailImage_outschool);
+        detailDes = findViewById(R.id.detailDes_outschool);
+        detailDes2 = findViewById(R.id.detailDes2_outschool);
+        detailDes3 = findViewById(R.id.detailDes3_outschool);
+        db = AppDatabase_outschool.getInstance(this);
 
-        User_foreign detail = getIntent().getParcelableExtra("data");
+        User_outschool detail = getIntent().getParcelableExtra("data");
 
         id = detail.getId();
         title = detail.getTitle();

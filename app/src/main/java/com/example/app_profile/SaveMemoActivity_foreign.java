@@ -20,7 +20,8 @@ public class SaveMemoActivity_foreign extends AppCompatActivity {
 
     private final int REQUEST_CODE = 200;
     private EditText description;
-    private TextView result;
+    private EditText description2;
+    private EditText description3;
     private AppDatabase_foreign db;
 
     @Override
@@ -33,7 +34,8 @@ public class SaveMemoActivity_foreign extends AppCompatActivity {
 
     private void initialized() {
         description = findViewById(R.id.description_foreign);
-        result = findViewById(R.id.result_foreign);
+        description2 = findViewById(R.id.description2_foreign);
+        description3 = findViewById(R.id.description3_foreign);
 
         db = AppDatabase_foreign.getInstance(this);
 
@@ -68,7 +70,7 @@ public class SaveMemoActivity_foreign extends AppCompatActivity {
         builder.setPositiveButton("저장", (dialog, which) -> {
             String s = editText.getText().toString();
             // db에 저장하기
-            User_foreign memo = new User_foreign(s, description.getText().toString());
+            User_foreign memo = new User_foreign(s, description.getText().toString(), description2.getText().toString(), description3.getText().toString());
             db.userDao().insert(memo);
             Toast.makeText(getApplicationContext(),"저장되었습니다", Toast.LENGTH_SHORT).show();
             dialog.dismiss();

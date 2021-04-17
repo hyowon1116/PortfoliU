@@ -6,51 +6,51 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.app_profile.Room.AppDatabase;
-import com.example.app_profile.Room.User;
+import com.example.app_profile.Room.AppDatabase_foreign;
+import com.example.app_profile.Room.AppDatabase_school;
+import com.example.app_profile.Room.User_foreign;
+import com.example.app_profile.Room.User_school;
 
-public class SaveMemoActivity extends AppCompatActivity {
+public class SaveMemoActivity_school extends AppCompatActivity {
 
     private final int REQUEST_CODE = 200;
     private EditText description;
     private EditText description2;
     private EditText description3;
-
-    private AppDatabase db;
+    private AppDatabase_school db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_save_memo);
+        setContentView(R.layout.activity_save_memo_school);
 
         initialized();
     }
 
     private void initialized() {
-        description = findViewById(R.id.description);
-        description2 = findViewById(R.id.description2);
-        description3 = findViewById(R.id.description3);
+        description = findViewById(R.id.description_school);
+        description2 = findViewById(R.id.description2_school);
+        description3 = findViewById(R.id.description3_school);
 
-        db = AppDatabase.getInstance(this);
+        db = AppDatabase_school.getInstance(this);
 
     }
 
     //메모저장하는 버튼
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.add_memo_menu, menu);
+        inflater.inflate(R.menu.add_memo_menu_school, menu);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.save:
+            case R.id.save_school:
                 make_title();
 
                 return true;
@@ -69,7 +69,7 @@ public class SaveMemoActivity extends AppCompatActivity {
         builder.setPositiveButton("저장", (dialog, which) -> {
             String s = editText.getText().toString();
             // db에 저장하기
-            User memo = new User(s, description.getText().toString(), description2.getText().toString(), description3.getText().toString());
+            User_school memo = new User_school(s, description.getText().toString(), description2.getText().toString(), description3.getText().toString());
             db.userDao().insert(memo);
             Toast.makeText(getApplicationContext(),"저장되었습니다", Toast.LENGTH_SHORT).show();
             dialog.dismiss();

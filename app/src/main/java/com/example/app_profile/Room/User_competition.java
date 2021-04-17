@@ -7,8 +7,8 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "memoTable")
-public class User implements Parcelable {
+@Entity(tableName = "memoTable_competition")
+public class User_competition implements Parcelable {
 
     //Room에서 자동으로 id를 할당
     @PrimaryKey(autoGenerate = true)
@@ -23,14 +23,14 @@ public class User implements Parcelable {
     @ColumnInfo(name = "user_des")
     private String des;
 
-    public User(String title, String date, String exp, String des) {
+    public User_competition(String title, String date, String exp, String des) {
         this.title = title;
         this.date = date;
         this.exp = exp;
         this.des = des;
     }
 
-    protected User(Parcel in) {
+    protected User_competition(Parcel in) {
         id = in.readInt();
         title = in.readString();
         date = in.readString();
@@ -38,15 +38,15 @@ public class User implements Parcelable {
         des = in.readString();
     }
 
-    public static final Creator<User> CREATOR = new Creator<User>() {
+    public static final Creator<User_competition> CREATOR = new Creator<User_competition>() {
         @Override
-        public User createFromParcel(Parcel in) {
-            return new User(in);
+        public User_competition createFromParcel(Parcel in) {
+            return new User_competition(in);
         }
 
         @Override
-        public User[] newArray(int size) {
-            return new User[size];
+        public User_competition[] newArray(int size) {
+            return new User_competition[size];
         }
     };
 

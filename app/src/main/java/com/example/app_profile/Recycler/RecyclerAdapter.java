@@ -56,6 +56,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
         private TextView description;
 
 
+
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -68,7 +70,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
             String s = "" + (position+1);
             key.setText(s);
             title.setText(user.getTitle());
-            description.setText(user.getDes());
+            description.setText(user.getDate());
 
             itemView.setOnLongClickListener(v -> {
                 userData.remove(user);

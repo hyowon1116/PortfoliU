@@ -9,27 +9,27 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.app_profile.DetailActivity;
 import com.example.app_profile.DetailActivity_foreign;
+import com.example.app_profile.DetailActivity_school;
 import com.example.app_profile.R;
-import com.example.app_profile.Room.AppDatabase;
 import com.example.app_profile.Room.AppDatabase_foreign;
-import com.example.app_profile.Room.User;
+import com.example.app_profile.Room.AppDatabase_school;
 import com.example.app_profile.Room.User_foreign;
+import com.example.app_profile.Room.User_school;
 
 import java.util.ArrayList;
 
 
-public class RecyclerAdapter_foreign extends RecyclerView.Adapter<RecyclerAdapter_foreign.MyViewHolder> {
+public class RecyclerAdapter_school extends RecyclerView.Adapter<RecyclerAdapter_school.MyViewHolder> {
 
 
-    private ArrayList<User_foreign> userData = new ArrayList<>();
+    private ArrayList<User_school> userData = new ArrayList<>();
 
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.memorecycler_itemview_foreign,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.memorecycler_itemview_school,parent,false);
         return new MyViewHolder(view);
     }
 
@@ -43,12 +43,12 @@ public class RecyclerAdapter_foreign extends RecyclerView.Adapter<RecyclerAdapte
         return userData.size();
     }
 
-    public void addItem(User_foreign user) {
+    public void addItem(User_school user) {
         userData.add(user);
         notifyDataSetChanged();
     }
 
-    public void addItems(ArrayList<User_foreign> users) {
+    public void addItems(ArrayList<User_school> users) {
         userData = users;
         notifyDataSetChanged();
     }
@@ -62,12 +62,12 @@ public class RecyclerAdapter_foreign extends RecyclerView.Adapter<RecyclerAdapte
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            key = itemView.findViewById(R.id.key_for);
-            title = itemView.findViewById(R.id.memoTextView1_for);
-            description = itemView.findViewById(R.id.memoTextView2_for);
+            key = itemView.findViewById(R.id.key_sch);
+            title = itemView.findViewById(R.id.memoTextView1_sch);
+            description = itemView.findViewById(R.id.memoTextView2_sch);
         }
 
-        public void onBind(User_foreign user, int position) {
+        public void onBind(User_school user, int position) {
             String s = "" + (position+1);
             key.setText(s);
             title.setText(user.getTitle());
@@ -75,7 +75,7 @@ public class RecyclerAdapter_foreign extends RecyclerView.Adapter<RecyclerAdapte
 
             itemView.setOnLongClickListener(v -> {
                 userData.remove(user);
-                AppDatabase_foreign.getInstance(itemView.getContext()).userDao().delete(user);
+                AppDatabase_school.getInstance(itemView.getContext()).userDao().delete(user);
 
                 notifyDataSetChanged();
                 return false;
@@ -83,7 +83,7 @@ public class RecyclerAdapter_foreign extends RecyclerView.Adapter<RecyclerAdapte
 
             itemView.setOnClickListener(v -> {
 
-                Intent intent = new Intent(itemView.getContext(), DetailActivity_foreign.class);
+                Intent intent = new Intent(itemView.getContext(), DetailActivity_school.class);
                 intent.putExtra("data", user);
                 itemView.getContext().startActivity(intent);
 

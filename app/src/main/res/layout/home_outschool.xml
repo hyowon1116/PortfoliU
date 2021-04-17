@@ -7,6 +7,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.home.outschoolFragment"
     >
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/mainRecyclerView_outschool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="80dp"
+        tools:listitem="@layout/memorecycler_itemview_outschool"
+        tools:ignore="MissingConstraints" />
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addMemo_outschool"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,8 +17,8 @@ public interface UserDao {
     @Update
     void update(User user);
 
-    @Query("UPDATE memoTable SET user_title = :t, user_des = :d WHERE user_id =:id")
-    void update(String t, String d, int id);
+    @Query("UPDATE memoTable SET user_title = :t, user_date = :da, user_expire = :e, user_des = :d WHERE user_id =:id")
+    void update(String t, String da, String e, String d, int id);
 
     @Delete
     void delete(User user);

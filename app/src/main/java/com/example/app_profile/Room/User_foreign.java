@@ -16,17 +16,25 @@ public class User_foreign implements Parcelable {
     private int id;
     @ColumnInfo(name = "user_title")
     private String title;
+    @ColumnInfo(name = "user_date")
+    private String date;
+    @ColumnInfo(name = "user_expire")
+    private String exp;
     @ColumnInfo(name = "user_des")
     private String des;
 
-    public User_foreign(String title, String des) {
+    public User_foreign(String title, String date, String exp, String des) {
         this.title = title;
+        this.date = date;
+        this.exp = exp;
         this.des = des;
     }
 
     protected User_foreign(Parcel in) {
         id = in.readInt();
         title = in.readString();
+        date = in.readString();
+        exp = in.readString();
         des = in.readString();
     }
 
@@ -58,6 +66,20 @@ public class User_foreign implements Parcelable {
         this.title = title;
     }
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getExp() {
+        return exp;
+    }
+
+    public void setExp(String exp) { this.exp = exp; }
+
     public String getDes() {
         return des;
     }
@@ -76,6 +98,8 @@ public class User_foreign implements Parcelable {
 
         dest.writeInt(id);
         dest.writeString(title);
+        dest.writeString(date);
+        dest.writeString(exp);
         dest.writeString(des);
     }
 }

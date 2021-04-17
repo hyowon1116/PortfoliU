@@ -18,6 +18,9 @@ public class DetailActivity extends AppCompatActivity {
     private EditText detailTitle;
     private ImageView detailImage;
     private EditText detailDes;
+    private EditText detailDes2;
+    private EditText detailDes3;
+
     private AppDatabase db;
 
     private FloatingActionButton exit;
@@ -25,6 +28,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private int id;
     private String title;
+    private String date;
+    private String exp;
     private String des;
 
 
@@ -40,9 +45,11 @@ public class DetailActivity extends AppCompatActivity {
         update.setOnClickListener(v -> {
             //문제점 : 그냥 그대로 저장이된다.
             title = detailTitle.getText().toString();
-            des = detailDes.getText().toString();
-            System.out.println("####1" + title + " " +des + " " + id);
-            db.userDao().update(title, des, id);
+            date = detailDes.getText().toString();
+            exp = detailDes2.getText().toString();
+            des = detailDes3.getText().toString();
+            System.out.println("####1" + title + " " +date+ " ~ "+ exp+ " "+des + " " + id);
+            db.userDao().update(title, date, exp, des, id);
             finish();
         });
         //그냥 종료
@@ -58,16 +65,23 @@ public class DetailActivity extends AppCompatActivity {
         detailTitle = findViewById(R.id.detailTitle);
         detailImage = findViewById(R.id.detailImage);
         detailDes = findViewById(R.id.detailDes);
+        detailDes2 = findViewById(R.id.detailDes2);
+        detailDes3 = findViewById(R.id.detailDes3);
+
         db = AppDatabase.getInstance(this);
 
         User detail = getIntent().getParcelableExtra("data");
 
         id = detail.getId();
         title = detail.getTitle();
+        date = detail.getDate();
+        exp = detail.getExp();
         des = detail.getDes();
 
         detailTitle.setText(title);
-        detailDes.setText(des);
+        detailDes.setText(date);
+        detailDes2.setText(exp);
+        detailDes3.setText(des);
     }
 
 

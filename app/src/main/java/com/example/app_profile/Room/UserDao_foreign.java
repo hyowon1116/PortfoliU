@@ -17,8 +17,8 @@ public interface UserDao_foreign {
     @Update
     void update(User_foreign user);
 
-    @Query("UPDATE memoTable_foreign SET user_title = :t, user_des = :d WHERE user_id =:id")
-    void update(String t, String d, int id);
+    @Query("UPDATE memoTable_foreign SET user_title = :t, user_date = :da, user_expire = :e, user_des = :d WHERE user_id =:id")
+    void update(String t, String da, String e, String d, int id);
 
     @Delete
     void delete(User_foreign user);

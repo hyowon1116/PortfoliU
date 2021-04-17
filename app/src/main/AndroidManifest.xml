@@ -29,6 +29,12 @@
         <activity android:name=".DetailActivity"/>
         <activity android:name=".SaveMemoActivity_foreign"/>
         <activity android:name=".DetailActivity_foreign"/>
+        <activity android:name=".SaveMemoActivity_school"/>
+        <activity android:name=".DetailActivity_school"/>
+        <activity android:name=".SaveMemoActivity_outschool"/>
+        <activity android:name=".DetailActivity_outschool"/>
+        <activity android:name=".SaveMemoActivity_competition"/>
+        <activity android:name=".DetailActivity_competition"/>
 
     </application>
 

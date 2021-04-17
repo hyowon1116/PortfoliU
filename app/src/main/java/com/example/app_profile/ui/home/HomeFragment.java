@@ -34,6 +34,7 @@ public class HomeFragment extends Fragment {
     schoolFragment SchoolFragment;
     outschoolFragment OutschoolFragment;
     competitionFragment CompetitionFragment;
+    Home home;
 
 
     @Override
@@ -53,7 +54,16 @@ public class HomeFragment extends Fragment {
         SchoolFragment = new schoolFragment();
         OutschoolFragment = new outschoolFragment();
         CompetitionFragment = new competitionFragment();
+        home = new Home();
 
+        Button button0 = (Button) rootview.findViewById(R.id.button0);
+        button0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                getChildFragmentManager().beginTransaction().replace(R.id.home_list, home).commit();
+            }
+        });
 
         Button button1 = (Button) rootview.findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
