@@ -2,8 +2,8 @@
     <string name="app_name">PortfoliU</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">계정명</string>
-    <string name="nav_header_subtitle">원하는 문구!</string>
+    <string name="nav_header_title">ForU</string>
+    <string name="nav_header_subtitle">김효원, 송재현</string>
     <string name="nav_header_desc">Navigation header</string>
 
     <string name="menu_home">Home</string>
