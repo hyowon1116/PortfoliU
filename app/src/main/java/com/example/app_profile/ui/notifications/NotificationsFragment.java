@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -50,6 +51,7 @@ public class NotificationsFragment extends Fragment {
         Spinner timeList = (Spinner) root.findViewById(R.id.timeList);
         Button addBtn = (Button) root.findViewById(R.id.addBtn);
         Button cancelBtn = (Button) root.findViewById(R.id.cancelBtn);
+        InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
 
         ArrayList<String> arrayList;
         ArrayAdapter<String> arrayAdapter;
@@ -141,7 +143,7 @@ public class NotificationsFragment extends Fragment {
                 if (lecName.getText().toString().replace(" ", "").equals("")) {
                     Toast.makeText(getActivity(),"강의명을 입력하세요.",Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getActivity(), "강의를 추가했습니다.", Toast.LENGTH_SHORT).show();
+                    imm.hideSoftInputFromWindow(page.getWindowToken(),0);
                     page.setVisibility(View.GONE);
                     TextView space = (TextView) root.findViewWithTag(daySelect + timeSelect);
                     space.setText(lecName.getText());
@@ -151,6 +153,7 @@ public class NotificationsFragment extends Fragment {
                     proName.setText("");
                     dayList.setSelection(0);
                     timeList.setSelection(0);
+                    Toast.makeText(getActivity(), "강의를 추가했습니다.", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -158,12 +161,13 @@ public class NotificationsFragment extends Fragment {
         cancelBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(),"강의 추가를 취소했습니다.",Toast.LENGTH_SHORT).show();
+                imm.hideSoftInputFromWindow(page.getWindowToken(),0);
                 page.setVisibility(View.GONE);
                 lecName.setText("");
                 proName.setText("");
                 dayList.setSelection(0);
                 timeList.setSelection(0);
+                Toast.makeText(getActivity(),"강의 추가를 취소했습니다.",Toast.LENGTH_SHORT).show();
             }
         });
         return root;
