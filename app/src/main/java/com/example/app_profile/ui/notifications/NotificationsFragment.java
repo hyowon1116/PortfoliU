@@ -146,7 +146,7 @@ public class NotificationsFragment extends Fragment {
                     imm.hideSoftInputFromWindow(page.getWindowToken(),0);
                     page.setVisibility(View.GONE);
                     TextView space = (TextView) root.findViewWithTag(daySelect + timeSelect);
-                    space.setText(lecName.getText());
+                    space.setText(lecName.getText().toString());
                     space.setTextColor(Color.BLACK);
                     space.setBackground(getResources().getDrawable(R.drawable.table_item));
                     lecName.setText("");
