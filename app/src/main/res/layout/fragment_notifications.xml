@@ -75,13 +75,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -144,13 +142,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -213,13 +209,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -282,13 +276,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -351,13 +343,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -420,13 +410,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -489,13 +477,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -558,13 +544,11 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/purple_500">
+            android:layout_weight="1">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginRight="3dp"
                 android:layout_weight="0.5"
                 android:background="@color/purple_500"
                 android:gravity="end"
@@ -652,7 +636,9 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:inputType="text"
+            android:textColor="@color/black"
             android:textAlignment="center"
+            android:textColorHint="@color/black"
             android:hint="강의명"/>
 
         <EditText
@@ -661,7 +647,9 @@
             android:layout_height="50dp"
             android:textSize="18sp"
             android:inputType="text"
+            android:textColor="@color/black"
             android:textAlignment="center"
+            android:textColorHint="@color/black"
             android:hint="교수명"/>
 
         <LinearLayout
@@ -700,6 +688,7 @@
             android:paddingRight="14dp"
             android:paddingTop="7dp"
             android:paddingBottom="7dp"
+            android:textColor="@color/black"
             android:spinnerMode="dialog"/>
 
         <LinearLayout
@@ -714,6 +703,7 @@
                 android:layout_weight="1"
                 android:layout_margin="10dp"
                 android:text="확인"
+                android:textStyle="bold"
                 android:background="@drawable/table_btn"
                 android:textSize="17sp"/>
 
@@ -724,6 +714,7 @@
                 android:layout_weight="1"
                 android:layout_margin="10dp"
                 android:text="취소"
+                android:textStyle="bold"
                 android:background="@drawable/table_btn"
                 android:textSize="17sp"/>
 

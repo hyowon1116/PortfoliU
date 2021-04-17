@@ -68,6 +68,7 @@ public class NotificationsFragment extends Fragment {
         dayList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 if (i == 0) {
                     daySelect = "monday";
                 } else if (i == 1) {
@@ -104,6 +105,7 @@ public class NotificationsFragment extends Fragment {
         timeList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ((TextView) adapterView.getChildAt(0)).setTextColor(Color.BLACK);
                 if (i == 0) {
                     timeSelect = 0;
                 } else if (i == 1) {
