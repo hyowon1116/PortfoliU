@@ -44,12 +44,10 @@ public class NotificationsFragment extends Fragment {
 
 
         int size = users.size();
-        for(int i = 0; i < size; i++){
-
+        for(int i=0; i < size; i++){
 
             textViews[i] = root.findViewWithTag(users.get(i).getTag());
             textViews[i].setText(users.get(i).getLec());
-
             textViews[i].setTextColor(Color.BLACK);
             textViews[i].setBackground(getResources().getDrawable(R.drawable.table_item));
 
@@ -64,8 +62,11 @@ public class NotificationsFragment extends Fragment {
             public void onClick(View v) {
                 move();
 
+
+
             }
         });
+
 
 
 

@@ -5,15 +5,20 @@ import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.app_profile.Room.AppDatabase_finishcnt;
 import com.example.app_profile.Room.AppDatabase_school;
 import com.example.app_profile.Room.AppDatabase_todo;
+import com.example.app_profile.Room.User_finishcnt;
 import com.example.app_profile.Room.User_school;
 import com.example.app_profile.Room.User_todo;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
 
 public class DetailActivity_todo extends AppCompatActivity {
     private final int REQUEST_CODE = 200;
@@ -24,6 +29,8 @@ public class DetailActivity_todo extends AppCompatActivity {
     private EditText detailDes2;
     private EditText detailDes3;
     private AppDatabase_todo db;
+    private AppDatabase_finishcnt db2;
+
 
     private FloatingActionButton exit;
     private FloatingActionButton update;
@@ -33,6 +40,12 @@ public class DetailActivity_todo extends AppCompatActivity {
     private String date;
     private String lec;
     private String des;
+
+    User_todo detail;
+    private ArrayList<User_todo> userData = new ArrayList<>();
+    private ArrayList<User_finishcnt> userData2 = new ArrayList<>();
+
+
 
 
     @Override
@@ -56,8 +69,13 @@ public class DetailActivity_todo extends AppCompatActivity {
         });
         //그냥 종료
         exit.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplication(), MainActivity.class);
-            startActivity(intent);
+            userData.remove(detail);
+            db.userDao().delete(detail);
+            User_finishcnt memo = new User_finishcnt(1);
+            db2.userDao().insert(memo);
+            Toast.makeText(getApplicationContext(),"과제를 완료하셨습니다.", Toast.LENGTH_LONG).show();
+
+            finish();
         });
     }
 
@@ -70,8 +88,10 @@ public class DetailActivity_todo extends AppCompatActivity {
         detailDes2 = findViewById(R.id.detailDes2_todo);
         detailDes3 = findViewById(R.id.detailDes3_todo);
         db = AppDatabase_todo.getInstance(this);
+        db2 = AppDatabase_finishcnt.getInstance(this);
 
-        User_todo detail = getIntent().getParcelableExtra("data");
+
+        detail = getIntent().getParcelableExtra("data");
 
         id = detail.getId();
         title = detail.getTitle();

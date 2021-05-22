@@ -56,6 +56,7 @@ public class RecyclerAdapter_todo extends RecyclerView.Adapter<RecyclerAdapter_t
     public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView key;
         private TextView title;
+        private TextView lec;
         private TextView date;
 
 
@@ -64,13 +65,15 @@ public class RecyclerAdapter_todo extends RecyclerView.Adapter<RecyclerAdapter_t
 
             key = itemView.findViewById(R.id.key_to);
             title = itemView.findViewById(R.id.memoTextView1_to);
-            date = itemView.findViewById(R.id.memoTextView2_to);
+            lec = itemView.findViewById(R.id.memoTextView2_to);
+            date = itemView.findViewById(R.id.memoTextView3_to);
         }
 
         public void onBind(User_todo user, int position) {
             String s = "" + (position+1);
             key.setText(s);
             title.setText(user.getTitle());
+            lec.setText(user.getLec());
             date.setText(user.getDate());
 
             itemView.setOnLongClickListener(v -> {

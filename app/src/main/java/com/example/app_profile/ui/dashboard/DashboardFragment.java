@@ -19,12 +19,15 @@ import com.example.app_profile.R;
 import com.example.app_profile.Recycler.RecyclerAdapter;
 import com.example.app_profile.Recycler.RecyclerAdapter_todo;
 import com.example.app_profile.Room.AppDatabase;
+import com.example.app_profile.Room.AppDatabase_finishcnt;
 import com.example.app_profile.Room.AppDatabase_todo;
 import com.example.app_profile.Room.User;
+import com.example.app_profile.Room.User_finishcnt;
 import com.example.app_profile.Room.User_todo;
 import com.example.app_profile.SaveMemoActivity;
 import com.example.app_profile.SaveMemoActivity_competition;
 import com.example.app_profile.SaveMemoActivity_todo;
+import com.example.app_profile.ui.gallery.GalleryViewModel;
 import com.example.app_profile.ui.home.HomeFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -35,12 +38,16 @@ public class DashboardFragment extends Fragment {
 
     private final int SAVE_MEMO_ACTIVITY = 1;
     private FloatingActionButton add;
+    private TextView cnt;
+    private DashboardViewModel dashboardViewModel;
 
     //리사이클러 뷰
     private RecyclerView recyclerView;
     private LinearLayoutManager linearLayoutManager;
     private RecyclerAdapter_todo adapter;
     private List<User_todo> users;
+    private List<User_finishcnt> users2;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +63,7 @@ public class DashboardFragment extends Fragment {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_dashboard, container, false);
         add = rootview.findViewById(R.id.addMemo_todo);
-
+        cnt = rootview.findViewById(R.id.finishcnt);
         recyclerView = rootview.findViewById(R.id.mainRecyclerView_todo);
         linearLayoutManager = new LinearLayoutManager(getContext());
         adapter = new RecyclerAdapter_todo();
@@ -66,6 +73,12 @@ public class DashboardFragment extends Fragment {
         for(int i = 0; i < size; i++){
             adapter.addItem(users.get(i));
         }
+
+
+        users2 = AppDatabase_finishcnt.getInstance(getContext()).userDao().getAll();
+        int size2 = users2.size();
+        cnt.setText("완료한 과제: "+size2+"개" );
+
 
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
