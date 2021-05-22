@@ -37,6 +37,9 @@
         <activity android:name=".DetailActivity_competition"/>
         <activity android:name=".SaveMemoActivity_todo"/>
         <activity android:name=".DetailActivity_todo"/>
+        <activity android:name=".SaveMemoActivity_timetable"/>
+
+
 
     </application>
 

@@ -17,18 +17,18 @@ public interface UserDao_timetable {
     @Update
     void update(User_timetable user);
 
-    @Query("UPDATE timetable SET user_lec = :l, user_prof = :p,  user_des = :d WHERE user_id =:id")
-    void update(String l, String p, String d, int id);
+    @Query("UPDATE Timetable SET user_tag = :t, user_lec = :l, user_prof = :p WHERE user_id =:id")
+    void update(String t, String l, String p,int id);
 
     @Delete
     void delete(User_timetable user);
 
-    @Query("SELECT * FROM  timetable")
-    List<User> getAll();
+    @Query("SELECT * FROM  Timetable")
+    List<User_timetable> getAll();
 
-    @Query("DELETE FROM timetable")
+    @Query("DELETE FROM Timetable")
     void deleteAll();
 
-    @Query("SELECT COUNT(*) as cnt FROM timetable")
+    @Query("SELECT COUNT(*) as cnt FROM Timetable")
     int getDataCount();
 }

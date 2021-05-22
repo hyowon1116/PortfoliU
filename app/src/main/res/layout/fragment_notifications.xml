@@ -10,6 +10,7 @@
     tools:context=".ui.notifications.NotificationsFragment">
 
     <TableLayout
+        android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -577,117 +578,7 @@
 
     </TableLayout>
 
-    <LinearLayout
-        android:id="@+id/ClassPage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#F5F1FF"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:visibility="gone">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:gravity="center"
-            android:text="추가할 강의를 입력하세요."
-            android:textColor="@color/black"
-            android:textSize="20sp"/>
-
-        <EditText
-            android:id="@+id/lecture_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:textColorHint="#B0B0B0"
-            android:hint="강의명"/>
-
-        <EditText
-            android:id="@+id/professor_name"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:textSize="18sp"
-            android:inputType="text"
-            android:textColor="@color/black"
-            android:textAlignment="center"
-            android:textColorHint="#B0B0B0"
-            android:hint="교수명"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textAlignment="viewEnd"
-                android:textSize="18sp"
-                android:padding="12dp"
-                android:layout_marginRight="5dp"
-                android:textColor="@color/black"
-                android:text="강의 요일 \u003A"/>
-
-            <Spinner
-                android:id="@+id/dayList"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="12dp"
-                android:layout_marginRight="20dp"
-                android:spinnerMode="dialog"/>
-
-        </LinearLayout>
-
-        <Spinner
-            android:id="@+id/timeList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="7dp"
-            android:paddingBottom="7dp"
-            android:textColor="@color/black"
-            android:spinnerMode="dialog"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/addBtn"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:text="확인"
-                android:textStyle="bold"
-                android:background="@drawable/table_btn"
-                android:textSize="17sp"/>
-
-            <Button
-                android:id="@+id/cancelBtn"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_weight="1"
-                android:layout_margin="10dp"
-                android:text="취소"
-                android:textStyle="bold"
-                android:background="@drawable/table_btn"
-                android:textSize="17sp"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ClassBtn"
@@ -699,5 +590,6 @@
         android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

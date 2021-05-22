@@ -7,31 +7,33 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "TimeTable")
+@Entity(tableName = "Timetable")
 public class User_timetable implements Parcelable {
 
     //Room에서 자동으로 id를 할당
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "user_id")
     private int id;
+    @ColumnInfo(name = "user_tag")
+    private String tag;
     @ColumnInfo(name = "user_lec")
     private String lec;
     @ColumnInfo(name = "user_prof")
     private String prof;
-    @ColumnInfo(name = "user_des")
-    private String des;
 
-    public User_timetable(String lec, String prof, String des) {
+
+    public User_timetable(String tag, String lec, String prof) {
+        this.tag = tag;
         this.lec = lec;
         this.prof = prof;
-        this.des = des;
     }
 
     protected User_timetable(Parcel in) {
         id = in.readInt();
+        tag = in.readString();
         lec = in.readString();
         prof = in.readString();
-        des = in.readString();
+
     }
 
     public static final Creator<User_timetable> CREATOR = new Creator<User_timetable>() {
@@ -54,6 +56,14 @@ public class User_timetable implements Parcelable {
         this.id = id;
     }
 
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     public String getLec() {
         return lec;
     }
@@ -61,6 +71,7 @@ public class User_timetable implements Parcelable {
     public void setLec(String lec) {
         this.lec = lec;
     }
+
     public String getProf() {
         return prof;
     }
@@ -69,13 +80,7 @@ public class User_timetable implements Parcelable {
         this.prof = prof;
     }
 
-    public String getDes() {
-        return des;
-    }
 
-    public void setDes(String des) {
-        this.des = des;
-    }
 
     @Override
     public int describeContents() {
@@ -86,8 +91,9 @@ public class User_timetable implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         dest.writeInt(id);
+        dest.writeString(tag);
         dest.writeString(lec);
         dest.writeString(prof);
-        dest.writeString(des);
+
     }
 }
