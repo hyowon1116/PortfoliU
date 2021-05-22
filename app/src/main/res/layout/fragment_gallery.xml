@@ -33,32 +33,36 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <TextView
+            <Button
+                android:id="@+id/bingo1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="자격증\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginRight="5dp"/>
 
-            <TextView
+            <Button
+                android:id="@+id/bingo2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="어학\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
-            <TextView
+            <Button
+                android:id="@+id/bingo3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="교내활동\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginLeft="5dp"/>
         </TableRow>
 
         <TableRow
@@ -66,32 +70,36 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <TextView
+            <Button
+                android:id="@+id/bingo4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="교외활동\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginRight="5dp"/>
 
-            <TextView
+            <Button
+                android:id="@+id/bingo5"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="공모전\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
-            <TextView
+            <Button
+                android:id="@+id/bingo6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="과제 성취율\n80% 이상"
-                android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginLeft="5dp"
+                android:text="과제 완료\n5개 이상"
+                android:textSize="18sp" />
         </TableRow>
 
         <TableRow
@@ -99,32 +107,36 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
-            <TextView
+            <Button
+                android:id="@+id/bingo7"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="게시글\n1개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginRight="5dp"/>
 
-            <TextView
+            <Button
+                android:id="@+id/bingo8"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="게시글\n1개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
-            <TextView
+            <Button
+                android:id="@+id/bingo9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:text="게시글\n1개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:background="@drawable/cell_shape"/>
+                android:layout_marginLeft="5dp"/>
         </TableRow>
 
     </TableLayout>
