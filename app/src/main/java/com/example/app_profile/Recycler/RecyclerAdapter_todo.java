@@ -18,13 +18,15 @@ import com.example.app_profile.Room.User_school;
 import com.example.app_profile.Room.User_todo;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 
 public class RecyclerAdapter_todo extends RecyclerView.Adapter<RecyclerAdapter_todo.MyViewHolder> {
 
 
     private ArrayList<User_todo> userData = new ArrayList<>();
-
+    // Millisecond 형태의 하루(24 시간)
+    private final int ONE_DAY = 24 * 60 * 60 * 1000;
 
     @NonNull
     @Override
@@ -74,7 +76,7 @@ public class RecyclerAdapter_todo extends RecyclerView.Adapter<RecyclerAdapter_t
             key.setText(s);
             title.setText(user.getTitle());
             lec.setText(user.getLec());
-            date.setText(user.getDate());
+            date.setText(getDday(user.getYear(), user.getMonth(), user.getDate()));
 
             itemView.setOnLongClickListener(v -> {
                 userData.remove(user);
@@ -92,5 +94,33 @@ public class RecyclerAdapter_todo extends RecyclerView.Adapter<RecyclerAdapter_t
 
             });
         }
+    }
+
+    private String getDday(int mYear, int mMonthOfYear, int mDayOfMonth) {
+
+        // D-day 설정
+        final Calendar ddayCalendar = Calendar.getInstance();
+        ddayCalendar.set(mYear, mMonthOfYear, mDayOfMonth);
+
+        // D-day 를 구하기 위해 millisecond 으로 환산하여 d-day 에서 today 의 차를 구한다.
+        final long dday = ddayCalendar.getTimeInMillis() / ONE_DAY;
+        final long today = Calendar.getInstance().getTimeInMillis() / ONE_DAY;
+        long result = dday - today;
+
+        // 출력 시 d-day 에 맞게 표시
+        String strFormat;
+        if (result > 0) {
+            strFormat = "D-%d";
+        } else if (result == 0) {
+            strFormat = "Today";
+        } else {
+            result *= -1;
+            strFormat = "D+%d";
+        }
+
+        final String strCount = (String.format(strFormat, result));
+
+
+        return strCount;
     }
 }

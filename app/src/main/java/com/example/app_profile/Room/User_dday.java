@@ -14,22 +14,28 @@ public class User_dday implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "user_id")
     private int id;
-    @ColumnInfo(name = "user_dday")
-    private String title;
-    @ColumnInfo(name = "user_date")
-    private String date;
+    @ColumnInfo(name = "user_dyear")
+    private int dyear;
+    @ColumnInfo(name = "user_dmonth")
+    private int dmonth;
+    @ColumnInfo(name = "user_ddate")
+    private int ddate;
 
 
 
-    public User_dday(String title, String date) {
-        this.title = title;
-        this.date = date;
+
+    public User_dday(int dyear, int dmonth, int ddate) {
+        this.dyear = dyear;
+        this.dmonth = dmonth;
+        this.ddate = ddate;
     }
 
     protected User_dday(Parcel in) {
         id = in.readInt();
-        title = in.readString();
-        date = in.readString();
+        dyear = in.readInt();
+        dmonth = in.readInt();
+        ddate = in.readInt();
+
 
     }
 
@@ -53,21 +59,30 @@ public class User_dday implements Parcelable {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public int getDyear() {
+        return dyear;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setDyear(int dyear) {
+        this.dyear = dyear;
     }
 
-    public String getDate() {
-        return date;
+    public int getDmonth() {
+        return dmonth;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setDmonth(int dmonth) {
+        this.dmonth = dmonth;
     }
+
+    public int getDdate() {
+        return ddate;
+    }
+
+    public void setDdate(int ddate) {
+        this.ddate= ddate;
+    }
+
 
 
 
@@ -80,8 +95,10 @@ public class User_dday implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
 
         dest.writeInt(id);
-        dest.writeString(title);
-        dest.writeString(date);
+        dest.writeInt(dyear);
+        dest.writeInt(dmonth);
+        dest.writeInt(ddate);
+
 
     }
 }

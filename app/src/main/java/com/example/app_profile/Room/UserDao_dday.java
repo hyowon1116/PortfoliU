@@ -17,8 +17,8 @@ public interface UserDao_dday {
     @Update
     void update(User_dday user);
 
-    @Query("UPDATE Dday SET user_dday = :t, user_date = :d WHERE user_id =:id")
-    void update(String t, String d, int id);
+    @Query("UPDATE Dday SET user_dyear = :t, user_dmonth = :d, user_ddate =:s  WHERE user_id =:id")
+    void update(int t, int d, int s, int id);
 
     @Delete
     void delete(User_dday user);

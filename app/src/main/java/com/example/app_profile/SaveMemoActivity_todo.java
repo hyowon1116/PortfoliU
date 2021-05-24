@@ -47,6 +47,7 @@ public class SaveMemoActivity_todo extends AppCompatActivity {
     private final int ONE_DAY = 24 * 60 * 60 * 1000;
 
     TextView edit_endDate;
+    int tyear, tmonth, tdate;
     Button datePick;
 
     ArrayList<String> arrayList;
@@ -149,7 +150,7 @@ public class SaveMemoActivity_todo extends AppCompatActivity {
         builder.setPositiveButton("저장", (dialog, which) -> {
             String s = editText.getText().toString();
             // db에 저장하기
-            User_todo memo = new User_todo(s,  Select.toString(),edit_endDate.getText().toString(), description3.getText().toString());
+            User_todo memo = new User_todo(s,  Select.toString(),tyear, tmonth, tdate, description3.getText().toString());
             db.userDao().insert(memo);
             Toast.makeText(getApplicationContext(),"저장되었습니다", Toast.LENGTH_SHORT).show();
             dialog.dismiss();
@@ -171,7 +172,9 @@ public class SaveMemoActivity_todo extends AppCompatActivity {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             edit_endDate.setText(year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth + "일");
-
+            tyear = year;
+            tmonth = monthOfYear;
+            tdate = dayOfMonth;
         }
     };
 

@@ -18,14 +18,20 @@ public class User_todo implements Parcelable {
     private String title;
     @ColumnInfo(name = "user_lec")
     private String lec;
+    @ColumnInfo(name = "user_year")
+    private int year;
+    @ColumnInfo(name = "user_month")
+    private int month;
     @ColumnInfo(name = "user_date")
-    private String date;
+    private int date;
     @ColumnInfo(name = "user_des")
     private String des;
 
-    public User_todo(String title, String lec, String date, String des) {
+    public User_todo(String title, String lec, int year, int month, int date, String des) {
         this.title = title;
         this.lec = lec;
+        this.year = year;
+        this.month = month;
         this.date = date;
         this.des = des;
     }
@@ -34,7 +40,9 @@ public class User_todo implements Parcelable {
         id = in.readInt();
         title = in.readString();
         lec = in.readString();
-        date = in.readString();
+        year = in.readInt();
+        month = in.readInt();
+        date = in.readInt();
         des = in.readString();
     }
 
@@ -74,12 +82,24 @@ public class User_todo implements Parcelable {
         this.lec = lec;
     }
 
-    public String getDate() {
-        return date;
+    public int getYear() {
+        return year;
     }
 
-    public void setDate(String date) {
-        this.date = date;
+    public void setYear(int year) {
+        this.year = year;
+    }
+
+    public int getMonth() {
+        return month;
+    }
+
+    public void setMonth(int month) {
+        this.month = month;
+    }
+
+    public int getDate() {
+        return date;
     }
 
     public String getDes() {
@@ -101,7 +121,9 @@ public class User_todo implements Parcelable {
         dest.writeInt(id);
         dest.writeString(title);
         dest.writeString(lec);
-        dest.writeString(date);
+        dest.writeInt(year);
+        dest.writeInt(month);
+        dest.writeInt(date);
         dest.writeString(des);
     }
 }

@@ -18,6 +18,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.app_profile.R;
 import com.example.app_profile.Room.AppDatabase_dday;
 import com.example.app_profile.Room.AppDatabase_todo;
+import com.example.app_profile.Room.User;
 import com.example.app_profile.Room.User_dday;
 import com.example.app_profile.Room.User_todo;
 
@@ -61,15 +62,17 @@ public class SlideshowFragment extends Fragment {
         db = AppDatabase_dday.getInstance(getContext());
         int size = db.userDao().getDataCount();
         if(size>0){
-            edit_endDateBtn.setText(db.userDao().getAll().get(size-1).getDate());
-            edit_result.setText(db.userDao().getAll().get(size-1).getTitle());
+            User_dday day = db.userDao().getAll().get(size-1);
+            edit_endDateBtn.setText(day.getDyear() + "년 " + (day.getDmonth() + 1) + "월 " + day.getDdate() + "일");
+
+            edit_result.setText(getDday(day.getDyear(), day.getDmonth(), day.getDdate()));
         }
 
         //한국어 설정 (ex: date picker)
         Locale.setDefault(Locale.KOREAN);
 
         // 디데이 날짜 입력
-        edit_endDateBtn.setText(currentYear + "년 " + (currentMonth + 1) + "월 " + currentDay + "일");
+        //edit_endDateBtn.setText(currentYear + "년 " + (currentMonth + 1) + "월 " + currentDay + "일");
 
         //datePicker : 디데이 날짜 입력하는 버튼, 클릭시 DatePickerDialog 띄우기
         datePicker.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +101,7 @@ public class SlideshowFragment extends Fragment {
 
             edit_result.setText(getDday(year, monthOfYear, dayOfMonth));
 
-            User_dday memo = new User_dday(edit_result.getText().toString(), edit_endDateBtn.getText().toString());
+            User_dday memo = new User_dday(year, monthOfYear, dayOfMonth);
             db.userDao().insert(memo);
         }
     };
