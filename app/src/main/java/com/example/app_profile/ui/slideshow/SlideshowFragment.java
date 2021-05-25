@@ -43,6 +43,7 @@ public class SlideshowFragment extends Fragment {
     private final int ONE_DAY = 24 * 60 * 60 * 1000;
 
     private static final int REQUEST_CODE = 0;
+    private static int PICK_IMAGE_REQUEST = 1;
 
     TextView edit_endDateBtn, edit_result;
     Button datePicker;
