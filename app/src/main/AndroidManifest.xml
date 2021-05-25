@@ -39,8 +39,9 @@
         <activity android:name=".DetailActivity_todo"/>
         <activity android:name=".SaveMemoActivity_timetable"/>
 
-
-
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" android:required="true"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:required="true"/>
 
 </manifest>
