@@ -102,7 +102,7 @@ public class SlideshowFragment extends Fragment {
             }
         });
 
-        // 프로필 사진 변경 버튼
+        // 프로필 사진 변경 버튼 
         imageChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -121,8 +121,10 @@ public class SlideshowFragment extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        Uri dataUri = data.getData();
-        imageView.setImageURI(dataUri);
+        if (data != null) { // 사진이 선택될 경우에만
+            Uri dataUri = data.getData();
+            imageView.setImageURI(dataUri);
+        }
     }
     
     /** @brief endDateSetListener
