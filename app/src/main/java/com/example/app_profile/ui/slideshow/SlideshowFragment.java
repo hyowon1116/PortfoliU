@@ -1,13 +1,16 @@
 package com.example.app_profile.ui.slideshow;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,9 +42,12 @@ public class SlideshowFragment extends Fragment {
     // Millisecond 형태의 하루(24 시간)
     private final int ONE_DAY = 24 * 60 * 60 * 1000;
 
+    private static final int REQUEST_CODE = 0;
+
     TextView edit_endDateBtn, edit_result;
     Button datePicker;
-
+    Button imageChange;
+    ImageView imageView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -49,7 +55,7 @@ public class SlideshowFragment extends Fragment {
                 new ViewModelProvider(this).get(SlideshowViewModel.class);
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
 
-        //시작일, 종료일 데이터 저장
+        // 시작일, 종료일 데이터 저장
         calendar = Calendar.getInstance();
         currentYear = calendar.get(Calendar.YEAR);
         currentMonth = (calendar.get(Calendar.MONTH));
@@ -58,23 +64,25 @@ public class SlideshowFragment extends Fragment {
         datePicker = (Button) root.findViewById(R.id.datePicker);
         edit_endDateBtn = (TextView) root.findViewById(R.id.edit_endDateBtn);
         edit_result = (TextView) root.findViewById(R.id.edit_result);
+        imageChange = (Button) root.findViewById(R.id.imageChange);
+        imageView = (ImageView) root.findViewById(R.id.imageView);
 
         db = AppDatabase_dday.getInstance(getContext());
         int size = db.userDao().getDataCount();
-        if(size>0){
+        if (size > 0) {
             User_dday day = db.userDao().getAll().get(size-1);
             edit_endDateBtn.setText(day.getDyear() + "년 " + (day.getDmonth() + 1) + "월 " + day.getDdate() + "일");
 
             edit_result.setText(getDday(day.getDyear(), day.getDmonth(), day.getDdate()));
         }
 
-        //한국어 설정 (ex: date picker)
+        // 한국어 설정 (ex: date picker)
         Locale.setDefault(Locale.KOREAN);
 
         // 디데이 날짜 입력
-        //edit_endDateBtn.setText(currentYear + "년 " + (currentMonth + 1) + "월 " + currentDay + "일");
+        // edit_endDateBtn.setText(currentYear + "년 " + (currentMonth + 1) + "월 " + currentDay + "일");
 
-        //datePicker : 디데이 날짜 입력하는 버튼, 클릭시 DatePickerDialog 띄우기
+        // datePicker : 디데이 날짜 입력하는 버튼, 클릭시 DatePickerDialog 띄우기
         datePicker.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -82,8 +90,17 @@ public class SlideshowFragment extends Fragment {
             }
         });
 
-
-
+        // 프로필 사진 변경 버튼
+        imageChange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(intent, REQUEST_CODE);
+                Toast.makeText(getActivity(),"변경할 사진을 선택하세요",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return root;
     }
@@ -135,7 +152,6 @@ public class SlideshowFragment extends Fragment {
 
         final String strCount = (String.format(strFormat, result));
 
-
         return strCount;
     }
 
@@ -156,18 +172,18 @@ public class SlideshowFragment extends Fragment {
             Calendar today = Calendar.getInstance(); //현재 오늘 날짜
             Calendar dday = Calendar.getInstance();
 
-            //시작일, 종료일 데이터 저장
+            // 시작일, 종료일 데이터 저장
             Calendar calendar = Calendar.getInstance();
             int cyear = calendar.get(Calendar.YEAR);
             int cmonth = (calendar.get(Calendar.MONTH) + 1);
             int cday = calendar.get(Calendar.DAY_OF_MONTH);
 
             today.set(cyear, cmonth, cday);
-            dday.set(dateEndY, dateEndM, dateEndD);// D-day의 날짜를 입력합니다.
+            dday.set(dateEndY, dateEndM, dateEndD); // D-day의 날짜를 입력합니다.
 
             long day = dday.getTimeInMillis() / 86400000;
             // 각각 날의 시간 값을 얻어온 다음
-            //( 1일의 값(86400000 = 24시간 * 60분 * 60초 * 1000(1초값) ) )
+            // ( 1일의 값(86400000 = 24시간 * 60분 * 60초 * 1000(1초값) ) )
 
             long tday = today.getTimeInMillis() / 86400000;
             long count = tday - day; // 오늘 날짜에서 dday 날짜를 빼주게 됩니다.
@@ -177,6 +193,4 @@ public class SlideshowFragment extends Fragment {
             return -1;
         }
     }
-
-
 }
