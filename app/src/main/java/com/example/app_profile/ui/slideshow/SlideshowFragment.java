@@ -2,7 +2,11 @@ package com.example.app_profile.ui.slideshow;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +29,14 @@ import com.example.app_profile.Room.User;
 import com.example.app_profile.Room.User_dday;
 import com.example.app_profile.Room.User_todo;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.Locale;
 
 public class SlideshowFragment extends Fragment {
@@ -104,7 +115,16 @@ public class SlideshowFragment extends Fragment {
 
         return root;
     }
+    
+    // 프로필 사진 선택
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
+        Uri dataUri = data.getData();
+        imageView.setImageURI(dataUri);
+    }
+    
     /** @brief endDateSetListener
      *  @date 2016-02-18
      *  @detail DatePickerDialog 띄우기, 종료일 저장, 기존에 입력한 값이 있으면 해당 데이터 설정 후 띄우기
