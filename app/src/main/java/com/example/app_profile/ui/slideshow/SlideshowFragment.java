@@ -94,11 +94,10 @@ public class SlideshowFragment extends Fragment {
         imageChange.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(intent, REQUEST_CODE);
-                Toast.makeText(getActivity(),"변경할 사진을 선택하세요",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(
+                        Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, PICK_IMAGE_REQUEST);
             }
         });
 
@@ -107,7 +106,7 @@ public class SlideshowFragment extends Fragment {
 
     /** @brief endDateSetListener
      *  @date 2016-02-18
-     *  @detail DatePickerDialog띄우기, 종료일 저장, 기존에 입력한 값이 있으면 해당 데이터 설정후 띄우기
+     *  @detail DatePickerDialog 띄우기, 종료일 저장, 기존에 입력한 값이 있으면 해당 데이터 설정 후 띄우기
      */
     private DatePickerDialog.OnDateSetListener endDateSetListener = new DatePickerDialog.OnDateSetListener() {
         @Override
@@ -134,7 +133,7 @@ public class SlideshowFragment extends Fragment {
         final Calendar ddayCalendar = Calendar.getInstance();
         ddayCalendar.set(mYear, mMonthOfYear, mDayOfMonth);
 
-        // D-day 를 구하기 위해 millisecond 으로 환산하여 d-day 에서 today 의 차를 구한다.
+        // D-day 를 구하기 위해 millisecond 로 환산하여 d-day 에서 today 의 차를 구한다.
         final long dday = ddayCalendar.getTimeInMillis() / ONE_DAY;
         final long today = Calendar.getInstance().getTimeInMillis() / ONE_DAY;
         long result = dday - today;
@@ -169,7 +168,7 @@ public class SlideshowFragment extends Fragment {
      *  */
     public int onCalculatorDate (int dateEndY, int dateEndM, int dateEndD) {
         try {
-            Calendar today = Calendar.getInstance(); //현재 오늘 날짜
+            Calendar today = Calendar.getInstance(); // 현재 오늘 날짜
             Calendar dday = Calendar.getInstance();
 
             // 시작일, 종료일 데이터 저장
@@ -182,12 +181,12 @@ public class SlideshowFragment extends Fragment {
             dday.set(dateEndY, dateEndM, dateEndD); // D-day의 날짜를 입력합니다.
 
             long day = dday.getTimeInMillis() / 86400000;
-            // 각각 날의 시간 값을 얻어온 다음
+            // 각각 날의 시간 값을 얻어온 후
             // ( 1일의 값(86400000 = 24시간 * 60분 * 60초 * 1000(1초값) ) )
 
             long tday = today.getTimeInMillis() / 86400000;
             long count = tday - day; // 오늘 날짜에서 dday 날짜를 빼주게 됩니다.
-            return (int) count; // 날짜는 하루 + 시켜줘야합니다.
+            return (int) count; // 날짜는 하루 + 시켜줘야 합니다.
         } catch (Exception e) {
             e.printStackTrace();
             return -1;
