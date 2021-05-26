@@ -54,8 +54,7 @@ public class DetailActivity extends AppCompatActivity {
         });
         //그냥 종료
         exit.setOnClickListener(v -> {
-            Intent intent = new Intent(getApplication(), MainActivity.class);
-            startActivity(intent);
+            finish();
         });
     }
 

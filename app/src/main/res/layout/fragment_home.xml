@@ -22,12 +22,6 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/button0"
-                android:layout_width="100dp"
-                android:layout_height="60dp"
-                android:layout_margin="5dp"
-                android:text="뒤로가기" />
 
             <Button
                 android:id="@+id/button1"
