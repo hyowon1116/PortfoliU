@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,9 +18,20 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintVertical_bias="0.02" />
+
+    <TextView
+        android:id="@+id/bingoCnt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="0빙고 달성"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/text_gallery"
+        app:layout_constraintBottom_toTopOf="@+id/bingoTable" />
 
     <TableLayout
+        android:id="@+id/bingoTable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="110dp"
@@ -41,7 +53,7 @@
                 android:text="자격증\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp" />
 
             <Button
                 android:id="@+id/bingo2"
@@ -52,7 +64,7 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp" />
 
             <Button
                 android:id="@+id/bingo3"
@@ -62,7 +74,7 @@
                 android:text="교내활동\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="5dp" />
         </TableRow>
 
         <TableRow
@@ -78,7 +90,7 @@
                 android:text="교외활동\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp" />
 
             <Button
                 android:id="@+id/bingo5"
@@ -89,7 +101,7 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp" />
 
             <Button
                 android:id="@+id/bingo6"
@@ -115,7 +127,7 @@
                 android:text="과제 완료\n3개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp" />
 
             <Button
                 android:id="@+id/bingo8"
@@ -126,7 +138,7 @@
                 android:textSize="18sp"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
+                android:layout_marginRight="5dp" />
 
             <Button
                 android:id="@+id/bingo9"
@@ -136,8 +148,9 @@
                 android:text="과제 완료\n10개 이상"
                 android:textSize="18sp"
                 android:gravity="center"
-                android:layout_marginLeft="5dp"/>
+                android:layout_marginLeft="5dp" />
         </TableRow>
 
     </TableLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
