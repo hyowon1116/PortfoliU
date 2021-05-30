@@ -1,7 +1,6 @@
 package com.example.app_profile.ui.gallery;
 
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -21,6 +20,7 @@ import com.example.app_profile.R;
 public class GalleryFragment extends Fragment {
 
     private GalleryViewModel galleryViewModel;
+    private int Count;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         galleryViewModel = new ViewModelProvider(this).get(GalleryViewModel.class);
@@ -35,6 +35,7 @@ public class GalleryFragment extends Fragment {
         Button bingo7 = (Button) root.findViewById(R.id.bingo7);
         Button bingo8 = (Button) root.findViewById(R.id.bingo8);
         Button bingo9 = (Button) root.findViewById(R.id.bingo9);
+        TextView bingoCnt = (TextView) root.findViewById(R.id.bingoCnt);
         Button.OnClickListener clickListener;
 
         final TextView textView = root.findViewById(R.id.text_gallery);
@@ -77,6 +78,7 @@ public class GalleryFragment extends Fragment {
                                 || (color4.equals("#000000") && color7.equals("#000000"))
                                 || (color5.equals("#000000") && color9.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo2:
@@ -86,6 +88,7 @@ public class GalleryFragment extends Fragment {
                         if ((color1.equals("#000000") && color3.equals("#000000"))
                                 || (color5.equals("#000000") && color8.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo3:
@@ -96,6 +99,7 @@ public class GalleryFragment extends Fragment {
                                 || (color6.equals("#000000") && color9.equals("#000000"))
                                 || (color5.equals("#000000") && color7.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo4:
@@ -105,6 +109,7 @@ public class GalleryFragment extends Fragment {
                         if ((color1.equals("#000000") && color7.equals("#000000"))
                                 || (color5.equals("#000000") && color6.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo5:
@@ -116,6 +121,7 @@ public class GalleryFragment extends Fragment {
                                 || (color3.equals("#000000") && color7.equals("#000000"))
                                 || (color4.equals("#000000") && color6.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo6:
@@ -125,6 +131,7 @@ public class GalleryFragment extends Fragment {
                         if ((color3.equals("#000000") && color9.equals("#000000"))
                                 || (color4.equals("#000000") && color5.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo7:
@@ -135,6 +142,7 @@ public class GalleryFragment extends Fragment {
                                 || (color3.equals("#000000") && color5.equals("#000000"))
                                 || (color8.equals("#000000") && color9.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo8:
@@ -144,6 +152,7 @@ public class GalleryFragment extends Fragment {
                         if ((color2.equals("#000000") && color5.equals("#000000"))
                                 || (color7.equals("#000000") && color9.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                     case R.id.bingo9:
@@ -154,9 +163,12 @@ public class GalleryFragment extends Fragment {
                                 || (color3.equals("#000000") && color6.equals("#000000"))
                                 || (color7.equals("#000000") && color8.equals("#000000"))) {
                             Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                            Count ++;
                         }
                         break;
                 }
+
+                bingoCnt.setText(Count+"빙고 달성");
 
             }
         };
