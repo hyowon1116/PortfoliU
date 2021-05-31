@@ -36,10 +36,8 @@ public class HomeFragment extends Fragment {
     competitionFragment CompetitionFragment;
     Home home;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
     }
 
@@ -48,7 +46,6 @@ public class HomeFragment extends Fragment {
 
         ViewGroup rootview = (ViewGroup)inflater.inflate(R.layout.fragment_home,container,false);
 
-
         CertificateFragment = new certificateFragment();
         ForeignFragment = new foreignFragment();
         SchoolFragment = new schoolFragment();
@@ -56,13 +53,10 @@ public class HomeFragment extends Fragment {
         CompetitionFragment = new competitionFragment();
         home = new Home();
 
-        
-
         Button button1 = (Button) rootview.findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getChildFragmentManager().beginTransaction().replace(R.id.home_list, CertificateFragment).commit();
             }
         });
@@ -71,7 +65,6 @@ public class HomeFragment extends Fragment {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getChildFragmentManager().beginTransaction().replace(R.id.home_list, ForeignFragment).commit();
             }
         });
@@ -80,7 +73,6 @@ public class HomeFragment extends Fragment {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getChildFragmentManager().beginTransaction().replace(R.id.home_list, SchoolFragment).commit();
             }
         });
@@ -89,7 +81,6 @@ public class HomeFragment extends Fragment {
         button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getChildFragmentManager().beginTransaction().replace(R.id.home_list, OutschoolFragment).commit();
             }
         });
@@ -98,15 +89,10 @@ public class HomeFragment extends Fragment {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 getChildFragmentManager().beginTransaction().replace(R.id.home_list, CompetitionFragment).commit();
             }
         });
 
         return rootview;
-
-
     }
-
-
 }
