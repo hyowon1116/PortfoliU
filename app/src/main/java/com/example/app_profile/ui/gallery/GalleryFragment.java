@@ -2,6 +2,7 @@ package com.example.app_profile.ui.gallery;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CpuUsageInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,108 +69,85 @@ public class GalleryFragment extends Fragment {
                 String color7 = String.format("#%06X", (0xFFFFFF & c7));
                 String color8 = String.format("#%06X", (0xFFFFFF & c8));
                 String color9 = String.format("#%06X", (0xFFFFFF & c9));
+                int beforeCount = Count;
 
                 switch (view.getId()) {
                     case R.id.bingo1:
                         bingo1.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo1.setTextColor(Color.BLACK);
                         bingo1.setEnabled(false);
-                        if ((color2.equals("#000000") && color3.equals("#000000"))
-                                || (color4.equals("#000000") && color7.equals("#000000"))
-                                || (color5.equals("#000000") && color9.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color2.equals("#000000") && color3.equals("#000000")) {Count++;}
+                        if (color4.equals("#000000") && color7.equals("#000000")) {Count++;}
+                        if (color5.equals("#000000") && color9.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo2:
                         bingo2.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo2.setTextColor(Color.BLACK);
                         bingo2.setEnabled(false);
-                        if ((color1.equals("#000000") && color3.equals("#000000"))
-                                || (color5.equals("#000000") && color8.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color1.equals("#000000") && color3.equals("#000000")) {Count++;}
+                        if (color5.equals("#000000") && color8.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo3:
                         bingo3.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo3.setTextColor(Color.BLACK);
                         bingo3.setEnabled(false);
-                        if ((color1.equals("#000000") && color2.equals("#000000"))
-                                || (color6.equals("#000000") && color9.equals("#000000"))
-                                || (color5.equals("#000000") && color7.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color1.equals("#000000") && color2.equals("#000000")) {Count++;}
+                        if (color5.equals("#000000") && color7.equals("#000000")) {Count++;}
+                        if (color6.equals("#000000") && color9.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo4:
                         bingo4.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo4.setTextColor(Color.BLACK);
                         bingo4.setEnabled(false);
-                        if ((color1.equals("#000000") && color7.equals("#000000"))
-                                || (color5.equals("#000000") && color6.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color1.equals("#000000") && color7.equals("#000000")) {Count++;}
+                        if (color5.equals("#000000") && color6.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo5:
                         bingo5.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo5.setTextColor(Color.BLACK);
                         bingo5.setEnabled(false);
-                        if ((color1.equals("#000000") && color9.equals("#000000"))
-                                || (color2.equals("#000000") && color8.equals("#000000"))
-                                || (color3.equals("#000000") && color7.equals("#000000"))
-                                || (color4.equals("#000000") && color6.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color1.equals("#000000") && color9.equals("#000000")) {Count++;}
+                        if (color2.equals("#000000") && color8.equals("#000000")) {Count++;}
+                        if (color3.equals("#000000") && color7.equals("#000000")) {Count++;}
+                        if (color4.equals("#000000") && color6.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo6:
                         bingo6.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo6.setTextColor(Color.BLACK);
                         bingo6.setEnabled(false);
-                        if ((color3.equals("#000000") && color9.equals("#000000"))
-                                || (color4.equals("#000000") && color5.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color3.equals("#000000") && color9.equals("#000000")) {Count++;}
+                        if (color4.equals("#000000") && color5.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo7:
                         bingo7.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo7.setTextColor(Color.BLACK);
                         bingo7.setEnabled(false);
-                        if ((color1.equals("#000000") && color4.equals("#000000"))
-                                || (color3.equals("#000000") && color5.equals("#000000"))
-                                || (color8.equals("#000000") && color9.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color1.equals("#000000") && color4.equals("#000000")) {Count++;}
+                        if (color3.equals("#000000") && color5.equals("#000000")) {Count++;}
+                        if (color8.equals("#000000") && color9.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo8:
                         bingo8.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo8.setTextColor(Color.BLACK);
                         bingo8.setEnabled(false);
-                        if ((color2.equals("#000000") && color5.equals("#000000"))
-                                || (color7.equals("#000000") && color9.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color2.equals("#000000") && color5.equals("#000000")) {Count++;}
+                        if (color7.equals("#000000") && color9.equals("#000000")) {Count++;}
                         break;
                     case R.id.bingo9:
                         bingo9.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo9.setTextColor(Color.BLACK);
                         bingo9.setEnabled(false);
-                        if ((color1.equals("#000000") && color5.equals("#000000"))
-                                || (color3.equals("#000000") && color6.equals("#000000"))
-                                || (color7.equals("#000000") && color8.equals("#000000"))) {
-                            Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
-                            Count ++;
-                        }
+                        if (color1.equals("#000000") && color5.equals("#000000")) {Count++;}
+                        if (color3.equals("#000000") && color6.equals("#000000")) {Count++;}
+                        if (color7.equals("#000000") && color8.equals("#000000")) {Count++;}
                         break;
                 }
 
-                bingoCnt.setText(Count+"빙고 달성");
-
+                // 이전보다 카운트가 증가했을 경우
+                if (Count > beforeCount) {
+                    Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
+                    bingoCnt.setText(Count+"빙고 달성");
+                }
             }
         };
 
