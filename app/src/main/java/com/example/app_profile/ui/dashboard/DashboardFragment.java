@@ -48,13 +48,9 @@ public class DashboardFragment extends Fragment {
     private List<User_todo> users;
     private List<User_finishcnt> users2;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
@@ -74,20 +70,16 @@ public class DashboardFragment extends Fragment {
             adapter.addItem(users.get(i));
         }
 
-
         users2 = AppDatabase_finishcnt.getInstance(getContext()).userDao().getAll();
         int size2 = users2.size();
         cnt.setText("완료한 과제: "+size2+"개" );
 
-
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapter);
-
 
         add.setOnClickListener(v -> {
             move();
         });
-
 
         return rootview;
     }
