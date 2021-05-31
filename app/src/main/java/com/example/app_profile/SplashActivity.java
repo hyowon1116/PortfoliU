@@ -28,7 +28,6 @@ public class SplashActivity extends AppCompatActivity {
     // Millisecond 형태의 하루(24 시간)
     private final int ONE_DAY = 24 * 60 * 60 * 1000;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceStare) {
         super.onCreate(savedInstanceStare);
@@ -48,8 +47,6 @@ public class SplashActivity extends AppCompatActivity {
 
             dday.setText(getDday(day.getDyear(), day.getDmonth(), day.getDdate()));
         }
-
-
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -90,8 +87,6 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         final String strCount = (String.format(strFormat, result));
-
-
         return strCount;
     }
 }
