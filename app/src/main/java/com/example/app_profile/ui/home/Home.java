@@ -24,27 +24,16 @@ import java.util.List;
 public class Home extends Fragment {
     HomeFragment homeFragment;
 
-
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-
-
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeFragment = new HomeFragment();
-
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.home_foreign, container, false);
-
-
-
 
         return rootview;
     }
-
 }
