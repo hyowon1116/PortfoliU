@@ -28,7 +28,6 @@
         android:text="0빙고 달성"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/text_gallery"
         app:layout_constraintBottom_toTopOf="@+id/bingoTable" />
 
@@ -54,6 +53,7 @@
                 android:layout_weight="1"
                 android:text="자격증\n3개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginRight="5dp" />
 
@@ -64,6 +64,7 @@
                 android:layout_weight="1"
                 android:text="어학\n3개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
@@ -75,6 +76,7 @@
                 android:layout_weight="1"
                 android:text="교내활동\n3개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginLeft="5dp" />
         </TableRow>
@@ -91,6 +93,7 @@
                 android:layout_weight="1"
                 android:text="교외활동\n3개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginRight="5dp" />
 
@@ -101,6 +104,7 @@
                 android:layout_weight="1"
                 android:text="공모전\n3개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
@@ -113,7 +117,8 @@
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:text="디데이\n설정"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                android:textColor="@color/white" />
         </TableRow>
 
         <TableRow
@@ -128,6 +133,7 @@
                 android:layout_weight="1"
                 android:text="과제 완료\n3개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginRight="5dp" />
 
@@ -138,6 +144,7 @@
                 android:layout_weight="1"
                 android:text="과제 완료\n5개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp" />
@@ -149,6 +156,7 @@
                 android:layout_weight="1"
                 android:text="과제 완료\n10개 이상"
                 android:textSize="18sp"
+                android:textColor="@color/white"
                 android:gravity="center"
                 android:layout_marginLeft="5dp" />
         </TableRow>
