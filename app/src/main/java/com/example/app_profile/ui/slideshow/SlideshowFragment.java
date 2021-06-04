@@ -24,9 +24,11 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.app_profile.R;
 import com.example.app_profile.Room.AppDatabase_dday;
+import com.example.app_profile.Room.AppDatabase_levelcnt;
 import com.example.app_profile.Room.AppDatabase_todo;
 import com.example.app_profile.Room.User;
 import com.example.app_profile.Room.User_dday;
+import com.example.app_profile.Room.User_levelcnt;
 import com.example.app_profile.Room.User_todo;
 
 import java.io.File;
@@ -37,6 +39,7 @@ import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class SlideshowFragment extends Fragment {
@@ -45,6 +48,7 @@ public class SlideshowFragment extends Fragment {
     AppDatabase_dday db;
     int dateEndY, dateEndM, dateEndD;
     int ddayValue = 0;
+    private AppDatabase_levelcnt db2;
 
     // 현재 날짜를 알기 위해 사용
     Calendar calendar;
@@ -80,6 +84,7 @@ public class SlideshowFragment extends Fragment {
         imageView = (ImageView) root.findViewById(R.id.imageView);
 
         db = AppDatabase_dday.getInstance(getContext());
+        db2 = AppDatabase_levelcnt.getInstance(this.getContext());
         int size = db.userDao().getDataCount();
         if (size > 0) {
             User_dday day = db.userDao().getAll().get(size-1);
@@ -102,16 +107,27 @@ public class SlideshowFragment extends Fragment {
             }
         });
 
-        // 프로필 사진 변경 버튼 
-        imageChange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(
-                        Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-                startActivityForResult(intent, PICK_IMAGE_REQUEST);
-            }
-        });
+
+        if(db2.userDao().getDataCount()<2){
+            imageChange.setVisibility(View.INVISIBLE);
+            imageView.setVisibility(View.INVISIBLE);
+        }
+        else{
+            imageChange.setVisibility(View.VISIBLE);
+            imageView.setVisibility(View.VISIBLE);
+
+            // 프로필 사진 변경 버튼
+            imageChange.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(
+                            Intent.ACTION_PICK,
+                            android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                    startActivityForResult(intent, PICK_IMAGE_REQUEST);
+                }
+            });
+        }
+
 
         return root;
     }

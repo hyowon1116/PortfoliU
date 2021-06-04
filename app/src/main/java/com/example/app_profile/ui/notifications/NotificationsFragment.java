@@ -25,7 +25,10 @@ public class NotificationsFragment extends Fragment {
     private final int REQUEST_CODE = 200;
     private TextView[] textViews = new TextView[40];
     private FloatingActionButton ClassBtn;
+    private FloatingActionButton Btn;
+
     private List<User_timetable> users;
+    private AppDatabase_timetable db;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,8 @@ public class NotificationsFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
         ClassBtn = (FloatingActionButton) root.findViewById(R.id.ClassBtn);
+        Btn = (FloatingActionButton) root.findViewById(R.id.deleteBtn);
+
         users = AppDatabase_timetable.getInstance(getContext()).userDao().getAll();
 
         int size = users.size();
@@ -54,6 +59,14 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 move();
+            }
+        });
+        db = AppDatabase_timetable.getInstance(getContext());
+
+        Btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.userDao().deleteAll();
             }
         });
 
