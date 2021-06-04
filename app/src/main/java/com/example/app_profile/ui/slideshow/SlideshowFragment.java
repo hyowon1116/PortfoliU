@@ -64,6 +64,8 @@ public class SlideshowFragment extends Fragment {
     Button datePicker;
     Button imageChange;
     ImageView imageView;
+    Uri dataUri;
+    String dataStr;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
