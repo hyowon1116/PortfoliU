@@ -138,8 +138,14 @@ public class SlideshowFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (data != null) { // 사진이 선택될 경우에만
-            Uri dataUri = data.getData();
+            dataUri = data.getData();
             imageView.setImageURI(dataUri);
+            dataStr = dataUri.toString();
+            Toast.makeText(getActivity(),"사진 변경에 시간이 다소 소요됩니다",Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this.getActivity(), MainActivity.class);
+            intent.putExtra("dataStr",dataStr);
+            startActivity(intent);
         }
     }
     
