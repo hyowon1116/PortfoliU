@@ -2,7 +2,6 @@ package com.example.app_profile.ui.gallery;
 
 import android.graphics.Color;
 import android.os.Bundle;
-import android.os.CpuUsageInfo;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,12 +18,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.app_profile.R;
 import com.example.app_profile.Room.AppDatabase_bingo;
-import com.example.app_profile.Room.AppDatabase_finishcnt;
 import com.example.app_profile.Room.AppDatabase_levelcnt;
-import com.example.app_profile.Room.AppDatabase_todo;
 import com.example.app_profile.Room.User_bingo;
 import com.example.app_profile.Room.User_levelcnt;
-import com.example.app_profile.Room.User_timetable;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -71,7 +67,7 @@ public class GalleryFragment extends Fragment {
         Btn = (FloatingActionButton) root.findViewById(R.id.formatBtn);
 
 
-        level = db.userDao().getDataCount();
+        level = db1.userDao().getDataCount();
         bingoCnt.setText("레벨 "+level);
 
         final TextView textView = root.findViewById(R.id.text_gallery);
@@ -211,8 +207,6 @@ public class GalleryFragment extends Fragment {
                 if(level>beforelevel){
                     bingoCnt.setText("레벨 "+level);
                 }
-
-
             }
         };
 
@@ -239,7 +233,6 @@ public class GalleryFragment extends Fragment {
     }
 
     public void count(){
-
         User_levelcnt bingo = new User_levelcnt(1);
         db.userDao().insert(bingo);
         Count =db.userDao().getDataCount();
@@ -257,10 +250,7 @@ public class GalleryFragment extends Fragment {
                 button.setTextColor(Color.BLACK);
                 button.setEnabled(false);
             }
-
         }
-
-
     }
 
     public void click(String button){
@@ -269,5 +259,4 @@ public class GalleryFragment extends Fragment {
         Log.i("block","clickfuntion");
         level =db1.userDao().getDataCount();
     }
-
 }
