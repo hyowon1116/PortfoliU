@@ -8,17 +8,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
-import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
-import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -64,7 +58,9 @@ public class MainActivity extends AppCompatActivity {
         try {
             String imgpath = getCacheDir() + "/" + imgName; // 내부 저장소에 저장되어 있는 이미지 경로
             Bitmap bm = BitmapFactory.decodeFile(imgpath);
-            imageView.setImageBitmap(bm); // 내부 저장소에 저장된 이미지를 이미지뷰에 셋
+            if (bm != null) {
+                imageView.setImageBitmap(bm); // 내부 저장소에 저장된 이미지를 이미지뷰에 셋
+            }
         } catch (Exception e) {
             imageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
         }
