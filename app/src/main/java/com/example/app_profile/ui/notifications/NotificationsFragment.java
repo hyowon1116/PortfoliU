@@ -39,8 +39,8 @@ public class NotificationsFragment extends Fragment {
         notificationsViewModel = new ViewModelProvider(this).get(NotificationsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
 
-        ClassBtn = (FloatingActionButton) root.findViewById(R.id.ClassBtn);
-        Btn = (FloatingActionButton) root.findViewById(R.id.deleteBtn);
+        ClassBtn = root.findViewById(R.id.ClassBtn);
+        Btn = root.findViewById(R.id.deleteBtn);
 
         users = AppDatabase_timetable.getInstance(getContext()).userDao().getAll();
 
@@ -52,9 +52,7 @@ public class NotificationsFragment extends Fragment {
             textViews[i].setBackground(getResources().getDrawable(R.drawable.table_item));
         }
 
-        //InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
-
-        // 버튼 이벤트
+        // 버튼 클릭 이벤트
         ClassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
