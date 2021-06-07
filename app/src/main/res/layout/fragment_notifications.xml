@@ -578,8 +578,6 @@
 
     </TableLayout>
 
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/ClassBtn"
         android:layout_width="wrap_content"
@@ -601,7 +599,5 @@
         android:src="@drawable/ic_close"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
