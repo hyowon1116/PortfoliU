@@ -251,10 +251,12 @@ public class GalleryFragment extends Fragment {
         }
     }
 
+    // 초기화 버튼 클릭 이벤트
     public void click(String button){
         User_bingo memo = new User_bingo(button);
         db1.userDao().insert(memo);
         Log.i("block","clickfuntion");
         level =db1.userDao().getDataCount();
+        Toast.makeText(getActivity(),"빙고판이 초기화되었습니다",Toast.LENGTH_SHORT).show();
     }
 }
