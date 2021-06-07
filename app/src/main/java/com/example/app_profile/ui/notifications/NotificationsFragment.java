@@ -52,7 +52,7 @@ public class NotificationsFragment extends Fragment {
             textViews[i].setBackground(getResources().getDrawable(R.drawable.table_item));
         }
 
-        // 버튼 클릭 이벤트
+        // 추가 버튼 클릭 이벤트
         ClassBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,6 +61,7 @@ public class NotificationsFragment extends Fragment {
         });
         db = AppDatabase_timetable.getInstance(getContext());
 
+        // 초기화 버튼 클릭 이벤트
         Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
