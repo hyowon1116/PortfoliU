@@ -8,27 +8,18 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.app_profile.R;
-import com.example.app_profile.Recycler.RecyclerAdapter;
 import com.example.app_profile.Recycler.RecyclerAdapter_todo;
-import com.example.app_profile.Room.AppDatabase;
 import com.example.app_profile.Room.AppDatabase_finishcnt;
 import com.example.app_profile.Room.AppDatabase_todo;
-import com.example.app_profile.Room.User;
 import com.example.app_profile.Room.User_finishcnt;
 import com.example.app_profile.Room.User_todo;
-import com.example.app_profile.SaveMemoActivity;
-import com.example.app_profile.SaveMemoActivity_competition;
 import com.example.app_profile.SaveMemoActivity_todo;
-import com.example.app_profile.ui.gallery.GalleryViewModel;
-import com.example.app_profile.ui.home.HomeFragment;
+
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -39,7 +30,6 @@ public class DashboardFragment extends Fragment {
     private final int SAVE_MEMO_ACTIVITY = 1;
     private FloatingActionButton add;
     private TextView cnt;
-    private DashboardViewModel dashboardViewModel;
 
     //리사이클러 뷰
     private RecyclerView recyclerView;
@@ -54,8 +44,7 @@ public class DashboardFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         ViewGroup rootview = (ViewGroup) inflater.inflate(R.layout.fragment_dashboard, container, false);
         add = rootview.findViewById(R.id.addMemo_todo);
