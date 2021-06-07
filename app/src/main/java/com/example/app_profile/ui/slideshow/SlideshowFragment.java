@@ -16,7 +16,6 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.app_profile.MainActivity;
 import com.example.app_profile.R;
@@ -29,7 +28,6 @@ import java.util.Locale;
 
 public class SlideshowFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
     AppDatabase_dday db;
     int dateEndY, dateEndM, dateEndD;
     int ddayValue = 0;
@@ -52,10 +50,7 @@ public class SlideshowFragment extends Fragment {
     Uri dataUri;
     String dataStr;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                new ViewModelProvider(this).get(SlideshowViewModel.class);
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
 
         // 시작일, 종료일 데이터 저장
@@ -64,11 +59,11 @@ public class SlideshowFragment extends Fragment {
         currentMonth = (calendar.get(Calendar.MONTH));
         currentDay = calendar.get(Calendar.DAY_OF_MONTH);
 
-        datePicker = (Button) root.findViewById(R.id.datePicker);
-        edit_endDateBtn = (TextView) root.findViewById(R.id.edit_endDateBtn);
-        edit_result = (TextView) root.findViewById(R.id.edit_result);
-        imageChange = (Button) root.findViewById(R.id.imageChange);
-        imageView = (ImageView) root.findViewById(R.id.imageView);
+        datePicker = root.findViewById(R.id.datePicker);
+        edit_endDateBtn = root.findViewById(R.id.edit_endDateBtn);
+        edit_result = root.findViewById(R.id.edit_result);
+        imageChange = root.findViewById(R.id.imageChange);
+        imageView = root.findViewById(R.id.imageView);
 
         db = AppDatabase_dday.getInstance(getContext());
         db2 = AppDatabase_levelcnt.getInstance(this.getContext());
@@ -82,9 +77,6 @@ public class SlideshowFragment extends Fragment {
 
         // 한국어 설정 (ex: date picker)
         Locale.setDefault(Locale.KOREAN);
-
-        // 디데이 날짜 입력
-        // edit_endDateBtn.setText(currentYear + "년 " + (currentMonth + 1) + "월 " + currentDay + "일");
 
         // datePicker : 디데이 날짜 입력하는 버튼, 클릭시 DatePickerDialog 띄우기
         datePicker.setOnClickListener(new View.OnClickListener() {
@@ -114,8 +106,6 @@ public class SlideshowFragment extends Fragment {
                 }
             });
         }
-
-
         return root;
     }
     
@@ -144,9 +134,7 @@ public class SlideshowFragment extends Fragment {
         @Override
         public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
             edit_endDateBtn.setText(year + "년 " + (monthOfYear + 1) + "월 " + dayOfMonth + "일");
-
             ddayValue = ddayResult_int(dateEndY, dateEndM, dateEndD);
-
             edit_result.setText(getDday(year, monthOfYear, dayOfMonth));
 
             User_dday memo = new User_dday(year, monthOfYear, dayOfMonth);
@@ -182,7 +170,6 @@ public class SlideshowFragment extends Fragment {
         }
 
         final String strCount = (String.format(strFormat, result));
-
         return strCount;
     }
 
@@ -190,7 +177,6 @@ public class SlideshowFragment extends Fragment {
         int result = 0;
 
         result = onCalculatorDate(dateEndY, dateEndM, dateEndD);
-
         return result;
     }
 
