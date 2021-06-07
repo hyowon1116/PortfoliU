@@ -10,7 +10,7 @@ public class GalleryViewModel extends ViewModel {
 
     public GalleryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("TWO빙고 하면\n★추가 기능 OPEN★");
+        mText.setValue("TWO빙고 달성하면\n★추가 기능 OPEN★");
     }
 
     public LiveData<String> getText() {
