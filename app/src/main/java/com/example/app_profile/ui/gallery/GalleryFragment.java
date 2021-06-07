@@ -64,7 +64,7 @@ public class GalleryFragment extends Fragment {
 
         db = AppDatabase_levelcnt.getInstance(this.getContext());
         db1 = AppDatabase_bingo.getInstance(this.getContext());
-        Btn = (FloatingActionButton) root.findViewById(R.id.formatBtn);
+        Btn = root.findViewById(R.id.formatBtn);
 
 
         level = db1.userDao().getDataCount();
@@ -111,84 +111,84 @@ public class GalleryFragment extends Fragment {
                         bingo1.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo1.setTextColor(Color.BLACK);
                         bingo1.setEnabled(false);
-                        click("1".toString());
+                        click("1");
                         if (color2.equals("#000000") && color3.equals("#000000")) {count();}
                         if (color4.equals("#000000") && color7.equals("#000000")) {count();}
                         if (color5.equals("#000000") && color9.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo2:
                         bingo2.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo2.setTextColor(Color.BLACK);
                         bingo2.setEnabled(false);
-                        click("2".toString());
-
+                        click("2");
                         if (color1.equals("#000000") && color3.equals("#000000")) {count();}
                         if (color5.equals("#000000") && color8.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo3:
                         bingo3.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo3.setTextColor(Color.BLACK);
                         bingo3.setEnabled(false);
-                        click("3".toString());
-
+                        click("3");
                         if (color1.equals("#000000") && color2.equals("#000000")) {count();}
                         if (color5.equals("#000000") && color7.equals("#000000")) {count();}
                         if (color6.equals("#000000") && color9.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo4:
                         bingo4.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo4.setTextColor(Color.BLACK);
                         bingo4.setEnabled(false);
-                        click("4".toString());
-
+                        click("4");
                         if (color1.equals("#000000") && color7.equals("#000000")) {count();}
                         if (color5.equals("#000000") && color6.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo5:
                         bingo5.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo5.setTextColor(Color.BLACK);
                         bingo5.setEnabled(false);
-                        click("5".toString());
-
+                        click("5");
                         if (color1.equals("#000000") && color9.equals("#000000")) {count();}
                         if (color2.equals("#000000") && color8.equals("#000000")) {count();}
                         if (color3.equals("#000000") && color7.equals("#000000")) {count();}
                         if (color4.equals("#000000") && color6.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo6:
                         bingo6.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo6.setTextColor(Color.BLACK);
                         bingo6.setEnabled(false);
-                        click("6".toString());
-
+                        click("6");
                         if (color3.equals("#000000") && color9.equals("#000000")) {count();}
                         if (color4.equals("#000000") && color5.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo7:
                         bingo7.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo7.setTextColor(Color.BLACK);
                         bingo7.setEnabled(false);
-                        click("7".toString());
-
+                        click("7");
                         if (color1.equals("#000000") && color4.equals("#000000")) {count();}
                         if (color3.equals("#000000") && color5.equals("#000000")) {count();}
                         if (color8.equals("#000000") && color9.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo8:
                         bingo8.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo8.setTextColor(Color.BLACK);
                         bingo8.setEnabled(false);
-                        click("8".toString());
-
+                        click("8");
                         if (color2.equals("#000000") && color5.equals("#000000")) {count();}
                         if (color7.equals("#000000") && color9.equals("#000000")) {count();}
                         break;
+
                     case R.id.bingo9:
                         bingo9.setBackgroundColor(Color.parseColor("#0000FF"));
                         bingo9.setTextColor(Color.BLACK);
                         bingo9.setEnabled(false);
-                        click("9".toString());
-
+                        click("9");
                         if (color1.equals("#000000") && color5.equals("#000000")) {count();}
                         if (color3.equals("#000000") && color6.equals("#000000")) {count();}
                         if (color7.equals("#000000") && color8.equals("#000000")) {count();}
@@ -199,11 +199,10 @@ public class GalleryFragment extends Fragment {
                 if (Count > beforeCount) {
                     Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
 
-                    if(Count==2){
-                        Toast.makeText(getActivity(),"사진 해제",Toast.LENGTH_SHORT).show();
+                    if(Count == 2){
+                        Toast.makeText(getActivity(),"사진 변경 기능이 해제되었습니다",Toast.LENGTH_SHORT).show();
                     }
                 }
-
                 if(level>beforelevel){
                     bingoCnt.setText("레벨 "+level);
                 }
@@ -219,7 +218,6 @@ public class GalleryFragment extends Fragment {
         bingo7.setOnClickListener(clickListener);
         bingo8.setOnClickListener(clickListener);
         bingo9.setOnClickListener(clickListener);
-
 
         Btn.setOnClickListener(new View.OnClickListener() {
             @Override
