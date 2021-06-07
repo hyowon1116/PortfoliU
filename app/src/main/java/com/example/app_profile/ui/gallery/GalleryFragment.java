@@ -66,7 +66,6 @@ public class GalleryFragment extends Fragment {
         db1 = AppDatabase_bingo.getInstance(this.getContext());
         Btn = root.findViewById(R.id.formatBtn);
 
-
         level = db1.userDao().getDataCount();
         bingoCnt.setText("레벨 "+level);
 
@@ -218,12 +217,14 @@ public class GalleryFragment extends Fragment {
         bingo7.setOnClickListener(clickListener);
         bingo8.setOnClickListener(clickListener);
         bingo9.setOnClickListener(clickListener);
-
+        
+        // 초기화 버튼 클릭 이벤트
         Btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 db.userDao().deleteAll();
                 db1.userDao().deleteAll();
+                Toast.makeText(getActivity(),"빙고판이 초기화되었습니다",Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -251,12 +252,10 @@ public class GalleryFragment extends Fragment {
         }
     }
 
-    // 초기화 버튼 클릭 이벤트
     public void click(String button){
         User_bingo memo = new User_bingo(button);
         db1.userDao().insert(memo);
         Log.i("block","clickfuntion");
         level =db1.userDao().getDataCount();
-        Toast.makeText(getActivity(),"빙고판이 초기화되었습니다",Toast.LENGTH_SHORT).show();
     }
 }
