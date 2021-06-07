@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,26 +41,23 @@ public class MainActivity extends AppCompatActivity {
         View nav_header_view = navigationView.getHeaderView(0);
         ImageView imageView = nav_header_view.findViewById(R.id.imageView);
 
-        // 프로필 사진 변경
-        try {
+        // 프로필 사진 show
+        try { // 프로필 사진 변경
             Intent intent = getIntent();
             Uri dataUri = Uri.parse(intent.getStringExtra("dataStr"));
+            imageView.setImageURI(dataUri);
 
             ContentResolver resolver = getContentResolver();
             InputStream instream = resolver.openInputStream(dataUri);
             Bitmap imgBitmap = BitmapFactory.decodeStream(instream);
             instream.close();
             saveBitmapToJpeg(imgBitmap);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
-        try {
+            Toast.makeText(this,"프로필 사진이 변경되었습니다",Toast.LENGTH_SHORT).show();
+        } catch (Exception e) { // 기존 프로필 사진
             String imgPath = getCacheDir() + "/" + imgName; // 내부 저장소에 저장되어 있는 이미지 경로
             Bitmap bm = BitmapFactory.decodeFile(imgPath);
             if (bm != null) {imageView.setImageBitmap(bm);} // 내부 저장소에 저장된 이미지를 이미지뷰에 셋
-        } catch (Exception e) {
-            imageView.setImageDrawable(getResources().getDrawable(R.mipmap.ic_launcher_round));
         }
 
         // Passing each menu ID as a set of Ids because each
