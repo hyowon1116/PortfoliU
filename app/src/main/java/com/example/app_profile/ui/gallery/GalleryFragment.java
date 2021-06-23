@@ -23,6 +23,7 @@ import com.example.app_profile.Room.User_bingo;
 import com.example.app_profile.Room.User_levelcnt;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class GalleryFragment extends Fragment {
@@ -198,7 +199,7 @@ public class GalleryFragment extends Fragment {
                 if (Count > beforeCount) {
                     Toast.makeText(getActivity(),"빙고입니다!",Toast.LENGTH_SHORT).show();
 
-                    if(Count == 2){
+                    if(Count == 2) {
                         Toast.makeText(getActivity(),"사진 변경 기능이 해제되었습니다",Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -224,6 +225,35 @@ public class GalleryFragment extends Fragment {
             public void onClick(View v) {
                 db.userDao().deleteAll();
                 db1.userDao().deleteAll();
+
+                bingo1.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo1.setTextColor(Color.WHITE);
+                bingo1.setEnabled(true);
+                bingo2.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo2.setTextColor(Color.WHITE);
+                bingo2.setEnabled(true);
+                bingo3.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo3.setTextColor(Color.WHITE);
+                bingo3.setEnabled(true);
+                bingo4.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo4.setTextColor(Color.WHITE);
+                bingo4.setEnabled(true);
+                bingo5.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo5.setTextColor(Color.WHITE);
+                bingo5.setEnabled(true);
+                bingo6.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo6.setTextColor(Color.WHITE);
+                bingo6.setEnabled(true);
+                bingo7.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo7.setTextColor(Color.WHITE);
+                bingo7.setEnabled(true);
+                bingo8.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo8.setTextColor(Color.WHITE);
+                bingo8.setEnabled(true);
+                bingo9.setBackgroundColor(Color.parseColor("#9F89D1"));
+                bingo9.setTextColor(Color.WHITE);
+                bingo9.setEnabled(true);
+
                 Toast.makeText(getActivity(),"빙고판이 초기화되었습니다",Toast.LENGTH_SHORT).show();
             }
         });
